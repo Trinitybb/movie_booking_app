@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+
+<div class = "movieCard">
+</div>
+  
+
+<div class = "card">
+
 <h1>{{ movie["title"] }}</h1>
 <p><strong>Rating:</strong> {{ movie["rating"] }} | <strong>Duration:</strong> {{ movie["duration_minutes"] }} minutes</p>
 <p>{{ movie["description"] }}</p>
@@ -16,3 +23,4 @@
   {% endfor %}
 </ul>
 {% endblock %}
+</div>
