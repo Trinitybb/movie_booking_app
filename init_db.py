@@ -141,29 +141,29 @@ def seed_data():
     # 3) Insert showtimes for all movies
     showtimes_data = [
         # Avatar showtimes
-        (avatar_id,   "2025-12-10 19:30", "Screen 1"),
-        (avatar_id,   "2025-12-10 21:30", "Screen 2"),
-        (avatar_id,   "2025-12-11 18:00", "Screen 1"),
+        (avatar_id,   "12-10-2025 7:30pm", "Screen 1"),
+        (avatar_id,   "12-10-2025 9:30pm", "Screen 2"),
+        (avatar_id,   "12-11-2025 6:00pm", "Screen 3"),
 
         # Twilight showtimes
-        (twilight_id, "2025-12-10 20:00", "Screen 3"),
-        (twilight_id, "2025-12-11 19:00", "Screen 2"),
-        (twilight_id, "2025-12-12 21:15", "Screen 1"),
+        (twilight_id, "12-10-2025 8:00pm", "Screen 1"),
+        (twilight_id, "12-11-2025 7:00pm", "Screen 2"),
+        (twilight_id, "12-12-2025 9:15pm", "Screen 3"),
 
         # Jurassic World Rebirth Showtimes
-        (jurassicworld_id, "2025-12-14 19:00", "Screen 1"),
-        (jurassicworld_id, "2025-12-14 21:45", "Screen 2"),
-        (jurassicworld_id, "2025-12-14 23:15", "Screen 3"),
+        (jurassicworld_id, "12-14-2025 7:00pm", "Screen 1"),
+        (jurassicworld_id, "12-14-2025 9:45pm", "Screen 2"),
+        (jurassicworld_id, "12-14-2025 11:15pm", "Screen 3"),
 
         # Black Panther Showtimes
-        (blackpanther_id, "2025-12-13 18:00", "Screen 1"),
-        (blackpanther_id, "2025-12-13 20:15", "Screen 2"),
-        (blackpanther_id, "2025-12-13 22:45", "Screen 3"),
+        (blackpanther_id, "12-13-2025 6:00pm", "Screen 1"),
+        (blackpanther_id, "12-13-2025 8:15pm", "Screen 2"),
+        (blackpanther_id, "12-13-2025 10:45pm", "Screen 3"),
 
         #Wicked showtimes
-        (wicked_id, "2025-12-10 22:30", "Screen 3"),
-        (wicked_id, "2025-12-11 17:45", "Screen 2"),
-        (wicked_id, "2025-12-12 20:20", "Screen 1"),
+        (wicked_id, "12-10-2025 10:30pm", "Screen 1"),
+        (wicked_id, "12-11-2025 5:45pm", "Screen 2"),
+        (wicked_id, "12-12-2025 8:20pm", "Screen 3"),
     ]
 
     showtime_ids = []

@@ -6,6 +6,13 @@ import string
 app = Flask(__name__)
 app.secret_key = "super-secret-key-change-me"  # needed for flash messages
 
+images = {
+    1:"avatar.jpg",
+    2:"twilight.jpg",
+    3:"wicked.jpg",
+    4: "jurassic.jpg",
+    5:"black-panther.jpg"
+    }
 
 def generate_confirmation_code(length=8):
     return "".join(random.choices(string.ascii_uppercase + string.digits, k=length))
@@ -46,7 +53,8 @@ def movie_detail(movie_id):
     if movie is None:
         return "Movie not found", 404
 
-    return render_template("movie.html", movie=movie, showtimes=showtimes)
+    return render_template("movie.html", movie=movie, showtimes=showtimes, image=images[movie_id])
+
 
 
 @app.route("/showtime/<int:showtime_id>/seats", methods=["GET", "POST"])

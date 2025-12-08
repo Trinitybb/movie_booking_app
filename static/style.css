@@ -10,7 +10,7 @@
 body {
     font-family: "Outfit", sans-serif;
     margin: 20px;
-    background-color: beige;
+    background-color: #f5f5dc;
 }
 
 nav a {
@@ -57,20 +57,101 @@ nav a {
     background-color: #ffdddd;
     border: 1px solid #ff7777;
 }
-.card{
-    margin:20px;
-    position: relative;
-    left: 260px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    padding: 20px;
+
+.movie-wrapper {
+    display: flex;
+    align-items: flex-start;   
+    gap: 25px;
+    width: 90%;
+    margin: 40px auto;
+    align-items: stretch;
+}
+
+/* Poster */
+.page-image {
+    width: 280px;
     border-radius: 12px;
-    transition: 0.3s;
-    width: 73%;
-    background-color: #ffffff;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+}
+
+.page-image:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card {
+    flex: 1;                   
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
 }
 
 .card:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+.card ul li{
+    list-style-type: none;
+    gap: 5px;
+    flex: 1;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 2px rgba(0,0,0,0.2);
+    background-color: #e0dddd;
+    transition: background-color 0.2s;
+}
+.card ul li:hover{
+    background-color: #c8c7c7;
+}
+
+.card ul li a{
+    color: #289eff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+button[type="submit"]{
+    font-family: "Outfit";
+    font-size: medium;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #000000;
+    padding:10px;
+    color:white;
+    text-align: center;
+    border-radius:20px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover{
+    background-color: #8f8f70;
+}
+
+.bookButton{
+    font-family: "Outfit";
+    font-size: 20px;
+    position:relative;
+    top:30px;
+    background-color: #000000;
+    padding:10px;
+    color:white;
+    text-align: center;
+    border-radius:30px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.bookButton:hover{
+    background-color: #8f8f70;
+}
+
+
+
+
+
 
 

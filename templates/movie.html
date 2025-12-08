@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class = "movie-wrapper">
+<img src="{{ url_for('static', filename='images/' + image) }}" class ="page-image">
 <div class = "movieCard">
 </div>
   
-
 <div class = "card">
+
+
 
 <h1>{{ movie["title"] }}</h1>
 <p><strong>Rating:</strong> {{ movie["rating"] }} | <strong>Duration:</strong> {{ movie["duration_minutes"] }} minutes</p>
@@ -15,7 +17,7 @@
 <ul>
   {% for st in showtimes %}
     <li>
-      {{ st["start_time"] }} ({{ st["screen_name"] }})
+      {{ st["start_time"] }} <strong>({{ st["screen_name"] }})</strong>
       — <a href="{{ url_for('showtime_seats', showtime_id=st['id']) }}">View seats</a>
     </li>
   {% else %}
@@ -23,4 +25,5 @@
   {% endfor %}
 </ul>
 {% endblock %}
+  </div>
 </div>

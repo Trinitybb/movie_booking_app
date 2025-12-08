@@ -2,15 +2,15 @@
 {% block content %}
 <h1>{{ movie["title"] }} – Seats</h1>
 <p>
-    Showtime: {{ showtime["start_time"] }} |
-    Screen: {{ showtime["screen_name"] }}
+    <strong>Showtime:</strong> {{ showtime["start_time"] }} |
+    <strong>Screen:</strong> {{ showtime["screen_name"] }}
 </p>
 
 <form method="POST">
     <label for="customer_name">Your name (optional):</label>
     <input type="text" id="customer_name" name="customer_name" placeholder="Guest">
 
-    <h2>Select your seats</h2>
+    <h2>Select your Seats</h2>
     <div class="seat-map">
         {% for row_label, seats in rows.items() %}
             <div class="seat-row">

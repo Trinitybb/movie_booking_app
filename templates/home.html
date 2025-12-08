@@ -16,11 +16,11 @@
       body {
         font-family: "Outfit", sans-serif;
         padding: 2rem;
-        background: #111;
+        background: #f5f5dc;
         color: #f5f5f5;
       }
       h1 {
-        color: #9cff57;
+        color: #000000ff;
         margin-bottom: 1.5rem;
       }
       .movie-list {
@@ -55,7 +55,7 @@
         text-decoration: none;
         font-size: 0.9rem;
         font-weight: 600;
-        background: #9cff57;
+        background: #dcdc79ff;
         color: #111;
       }
       a.button:hover {
@@ -64,9 +64,10 @@
       .top-links {
         margin-bottom: 1rem;
         font-size: 0.9rem;
+        text-align: right;
       }
       .top-links a {
-        color: #9cff57;
+        color: #000000ff;
         text-decoration: none;
       }
 
@@ -81,7 +82,7 @@
   </head>
   <body>
     <div class="top-links">
-      <a href="{{ url_for('analytics') }}">View Analytics</a>
+      <a href="{{ url_for('analytics') }}"><strong>View Analytics</a>
     </div>
 
     <section class="hero">
