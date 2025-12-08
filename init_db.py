@@ -61,7 +61,7 @@ def seed_data():
     conn = get_connection()
     cur = conn.cursor()
 
-    # Insert one movie: Avatar
+    # 1) Insert Avatar
     cur.execute(
         """
         INSERT INTO movies (title, description, rating, duration_minutes)
@@ -75,13 +75,34 @@ def seed_data():
             162,
         ),
     )
-    movie_id = cur.lastrowid
+    avatar_id = cur.lastrowid
 
-    # Insert 3 showtimes for Avatar
+    # 2) Insert Twilight
+    cur.execute(
+        """
+        INSERT INTO movies (title, description, rating, duration_minutes)
+        VALUES (?, ?, ?, ?);
+        """,
+        (
+            "Twilight",
+            "A teenage girl risks everything when she falls in love with a vampire.",
+            "PG-13",
+            122,
+        ),
+    )
+    twilight_id = cur.lastrowid
+
+    # 3) Insert showtimes for both movies
     showtimes_data = [
-        (movie_id, "2025-12-10 19:30", "Screen 1"),
-        (movie_id, "2025-12-10 21:30", "Screen 2"),
-        (movie_id, "2025-12-11 18:00", "Screen 1"),
+        # Avatar showtimes
+        (avatar_id,   "2025-12-10 19:30", "Screen 1"),
+        (avatar_id,   "2025-12-10 21:30", "Screen 2"),
+        (avatar_id,   "2025-12-11 18:00", "Screen 1"),
+
+        # Twilight showtimes
+        (twilight_id, "2025-12-10 20:00", "Screen 3"),
+        (twilight_id, "2025-12-11 19:00", "Screen 2"),
+        (twilight_id, "2025-12-12 21:15", "Screen 1"),
     ]
 
     showtime_ids = []
@@ -95,7 +116,7 @@ def seed_data():
         )
         showtime_ids.append(cur.lastrowid)
 
-    # Generate seats: rows A–D, seats 1–10 for each showtime
+    # 4) Generate seats: rows A–D, seats 1–10 for each showtime (same as before)
     rows = ["A", "B", "C", "D"]
     seats_per_row = 10
 
@@ -112,6 +133,7 @@ def seed_data():
 
     conn.commit()
     conn.close()
+
 
 
 if __name__ == "__main__":
