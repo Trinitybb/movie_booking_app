@@ -92,6 +92,21 @@ def seed_data():
     )
     twilight_id = cur.lastrowid
 
+    # Inserted Wicked: For Good
+    cur.execute(
+        """
+        INSERT INTO movies (title, description, rating, duration_minutes)
+        VALUES (?, ?, ?, ?);
+        """,
+        (
+            "Wicked: For Good",
+            "Now demonized as the Wicked Witch of the West, Elphaba lives in exile in the Ozian forest, while Glinda resides at the palace in Emerald City, reveling in the perks of fame and popularity. As an angry mob rises against the Wicked Witch, she'll need to reunite with Glinda to transform herself, and all of Oz, for good.",
+            "PG",
+            138,
+        ),
+    )
+    wicked_id = cur.lastrowid
+
     # 3) Insert showtimes for both movies
     showtimes_data = [
         # Avatar showtimes
@@ -103,6 +118,11 @@ def seed_data():
         (twilight_id, "2025-12-10 20:00", "Screen 3"),
         (twilight_id, "2025-12-11 19:00", "Screen 2"),
         (twilight_id, "2025-12-12 21:15", "Screen 1"),
+
+        #Wicked showtimes
+        (wicked_id, "2025-12-10 22:30", "Screen 3"),
+        (wicked_id, "2025-12-11 17:45", "Screen 2"),
+        (wicked_id, "2025-12-12 20:20", "Screen 1"),
     ]
 
     showtime_ids = []
