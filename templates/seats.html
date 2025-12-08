@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ movie["title"] }} – Seats</h1>
+<p>
+    Showtime: {{ showtime["start_time"] }} |
+    Screen: {{ showtime["screen_name"] }}
+</p>
+
+<form method="POST">
+    <label for="customer_name">Your name (optional):</label>
+    <input type="text" id="customer_name" name="customer_name" placeholder="Guest">
+
+    <h2>Select your seats</h2>
+    <div class="seat-map">
+        {% for row_label, seats in rows.items() %}
+            <div class="seat-row">
+                <span class="row-label">{{ row_label }}</span>
+                {% for seat in seats %}
+                    <label class="seat {% if seat['is_booked'] == 1 %}booked{% endif %}">
+                        <input
+                            type="checkbox"
+                            name="seats"
+                            value="{{ seat['id'] }}"
+                            {% if seat['is_booked'] == 1 %}disabled{% endif %}
+                        >
+                        {{ seat["seat_number"] }}
+                    </label>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <button type="submit">Book Selected Seats</button>
+</form>
+{% endblock %}

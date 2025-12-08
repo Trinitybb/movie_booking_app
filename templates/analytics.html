@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Showtime Analytics</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Showtime</th>
+            <th>Total Seats</th>
+            <th>Booked</th>
+            <th>Available</th>
+            <th>Occupancy (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in analytics_data %}
+        <tr>
+            <td>{{ row.movie_title }}</td>
+            <td>{{ row.start_time }}</td>
+            <td>{{ row.total_seats }}</td>
+            <td>{{ row.booked }}</td>
+            <td>{{ row.available }}</td>
+            <td>{{ row.occupancy_rate }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

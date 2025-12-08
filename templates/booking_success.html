@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Booking Confirmed ✅</h1>
+
+<p><strong>Movie:</strong> {{ header["title"] }}</p>
+<p><strong>Showtime:</strong> {{ header["start_time"] }}</p>
+<p><strong>Screen:</strong> {{ header["screen_name"] }}</p>
+<p><strong>Name:</strong> {{ header["customer_name"] }}</p>
+<p><strong>Confirmation Code:</strong> {{ header["confirmation_code"] }}</p>
+
+<h2>Seats</h2>
+<ul>
+  {% for b in bookings %}
+    <li>Row {{ b["row_label"] }} – Seat {{ b["seat_number"] }}</li>
+  {% endfor %}
+</ul>
+
+<a href="{{ url_for('home') }}">Book more tickets</a>
+{% endblock %}

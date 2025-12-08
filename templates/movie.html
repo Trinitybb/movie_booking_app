@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ movie["title"] }}</h1>
+<p><strong>Rating:</strong> {{ movie["rating"] }} | <strong>Duration:</strong> {{ movie["duration_minutes"] }} minutes</p>
+<p>{{ movie["description"] }}</p>
+
+<h2>Showtimes</h2>
+<ul>
+  {% for st in showtimes %}
+    <li>
+      {{ st["start_time"] }} ({{ st["screen_name"] }})
+      — <a href="{{ url_for('showtime_seats', showtime_id=st['id']) }}">View seats</a>
+    </li>
+  {% else %}
+    <li>No showtimes available.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

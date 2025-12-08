@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+nav a {
+    margin-right: 10px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.seat-map {
+    margin-top: 10px;
+}
+
+.seat-row {
+    margin-bottom: 8px;
+}
+
+.row-label {
+    display: inline-block;
+    width: 30px;
+    font-weight: bold;
+}
+
+.seat {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.seat.booked {
+    background-color: #ccc;
+    color: #666;
+}
+
+.flash {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.flash.error {
+    background-color: #ffdddd;
+    border: 1px solid #ff7777;
+}
