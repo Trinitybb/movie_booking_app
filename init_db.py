@@ -92,22 +92,37 @@ def seed_data():
     )
     twilight_id = cur.lastrowid
 
-    # Inserted Wicked: For Good
+    # Insert Jurassic World Rebirth
     cur.execute(
         """
         INSERT INTO movies (title, description, rating, duration_minutes)
         VALUES (?, ?, ?, ?);
         """,
         (
-            "Wicked: For Good",
-            "Now demonized as the Wicked Witch of the West, Elphaba lives in exile in the Ozian forest, while Glinda resides at the palace in Emerald City, reveling in the perks of fame and popularity. As an angry mob rises against the Wicked Witch, she'll need to reunite with Glinda to transform herself, and all of Oz, for good.",
-            "PG",
-            138,
+            "Jurassic World Rebirth",
+            "Zora Bennett leads a team of skilled operatives to the most dangerous place on Earth, an island research facility for the original Jurassic Park.",
+            "PG-13",
+            134,
         ),
     )
-    wicked_id = cur.lastrowid
+    jurassicworld_id = cur.lastrowid
 
-    # 3) Insert showtimes for both movies
+    # Insert Black Panther
+    cur.execute(
+        """
+        INSERT INTO movies (title, description, rating, duration_minutes)
+        VALUES (?, ?, ?, ?);
+        """,
+        (
+            "Black Panther",
+            "After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king.",
+            "PG-13",
+            135,
+        ),
+    )
+    blackpanther_id = cur.lastrowid
+
+    # 3) Insert showtimes for all movies
     showtimes_data = [
         # Avatar showtimes
         (avatar_id,   "2025-12-10 19:30", "Screen 1"),
@@ -119,10 +134,15 @@ def seed_data():
         (twilight_id, "2025-12-11 19:00", "Screen 2"),
         (twilight_id, "2025-12-12 21:15", "Screen 1"),
 
-        #Wicked showtimes
-        (wicked_id, "2025-12-10 22:30", "Screen 3"),
-        (wicked_id, "2025-12-11 17:45", "Screen 2"),
-        (wicked_id, "2025-12-12 20:20", "Screen 1"),
+        # Jurassic World Rebirth Showtimes
+        (jurassicworld_id, "2025-12-14 19:00", "Screen 1"),
+        (jurassicworld_id, "2025-12-14 21:45", "Screen 2"),
+        (jurassicworld_id, "2025-12-14 23:15", "Screen 3"),
+
+        # Black Panther Showtimes
+        (blackpanther_id, "2025-12-13 18:00", "Screen 1"),
+        (blackpanther_id, "2025-12-13 20:15", "Screen 2"),
+        (blackpanther_id, "2025-12-13 22:45", "Screen 3"),
     ]
 
     showtime_ids = []
