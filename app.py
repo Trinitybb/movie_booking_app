@@ -10,20 +10,21 @@ app.secret_key = "super-secret-key-change-me"  # needed for flash messages
 def generate_confirmation_code(length=8):
     return "".join(random.choices(string.ascii_uppercase + string.digits, k=length))
 
-
 @app.route("/")
 def home():
-    # For now, just show the first movie (Avatar)
+    """Main screen: show all movies and let the user pick one."""
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("SELECT * FROM movies LIMIT 1;")
-    movie = cur.fetchone()
+
+    cur.execute("SELECT * FROM movies ORDER BY title;")
+    movies = cur.fetchall()
     conn.close()
 
-    if movie is None:
-        return "No movie found. Did you run init_db.py?", 500
+    if not movies:
+        return "No movies found. Did you run init_db.py?", 500
 
-    return redirect(url_for("movie_detail", movie_id=movie["id"]))
+    return render_template("home.html", movies=movies)
+
 
 
 @app.route("/movie/<int:movie_id>")
